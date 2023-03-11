@@ -7,6 +7,9 @@ Numero de divisoes:
 Angulo da biela de concreto (Rad):
 0.7853981
 
+Alpha E NBR6118 item 8.2.8:
+1.0
+
 Exibir Divisao regioes (0 ou 1):
 0
 

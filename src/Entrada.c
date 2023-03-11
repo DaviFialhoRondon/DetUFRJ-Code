@@ -125,6 +125,7 @@ while (fgets(line, sizeof(line),fEntGer)){
     if (strncmp(line, "Dimensao do agregado graudo (m):"                ,32) == 0) fscanf(fEntAvan, "%lf " , &vPtr->prop.dimAgreg);
     if (strncmp(line, "Numero de divisoes:"                             ,19) == 0) fscanf(fEntAvan, "%d " , &vPtr->numDiv);
     if (strncmp(line, "Angulo da biela de concreto (Rad):"              ,34) == 0) fscanf(fEntAvan, "%lf " , &vPtr->prop.angBiela);
+    if (strncmp(line, "Alpha E NBR6118 item 8.2.8:"                     ,27) == 0) fscanf(fEntAvan, "%lf " , &vPtr->prop.alphaE);
     if (strncmp(line, "Exibir Divisao regioes (0 ou 1):"                ,32) == 0) fscanf(fEntAvan, "%d " , &vPtr->exibir.divReg);
     if (strncmp(line, "Exibir Dimensionamento (0 ou 1):"                ,32) == 0) fscanf(fEntAvan, "%d " , &vPtr->exibir.dimens);
     if (strncmp(line, "Exibir barras utilizadas (0 ou 1):"              ,34) == 0) fscanf(fEntAvan, "%d " , &vPtr->exibir.bUtil);
@@ -168,8 +169,9 @@ void Valid_entrada(struct viga * vPtr)
     if (vPtr->prop.classeAgressividade <= 0 ) error_show("CAA menor ou igual a zero",8);
     if (vPtr->prop.classeAgressividade >  4 ) error_show("CAA maior que 4",9);
     if (vPtr->prop.dimAgreg            <= 0 ) error_show("Dimensao do agregado menor ou igual a zero (configuracoes avancadas)",14);
-    if (vPtr->numDiv                   <= 0 ) error_show("Numero de divisoes menor ou igual a zero (configuracoes avancadas",15);
-    if (vPtr->prop.angBiela            <= 0 ) error_show("Angulo da biela de concreto menor ou igual a zero (configuracoes avancadas",16);
+    if (vPtr->numDiv                   <= 0 ) error_show("Numero de divisoes menor ou igual a zero (configuracoes avancadas)",15);
+    if (vPtr->prop.angBiela            <= 0 ) error_show("Angulo da biela de concreto menor ou igual a zero (configuracoes avancadas)",16);
+    if (vPtr->prop.alphaE              <= 0 ) error_show("Parametro alphaE menor ou igual a zero (configuracoes avancadas)",17);
 
     switch (vPtr->prop.classeAgressividade){
     case 1: cobMin = 0.025; break;
@@ -219,11 +221,11 @@ void calculo_propriedades(struct viga * vPtr)
     // Fct_m - Resistência a tração média do concreto (MPa) e Ecs - Módulo de elasticidade (GPa)
     if (vPtr->prop.fck <= 50){
         vPtr->prop.fct_m = 0.3 * pow(vPtr->prop.fck, (2.0 / 3.0));
-        vPtr->prop.Ec  = 0.001 * ALPHA_E * 5600 * sqrt(vPtr->prop.fck) * fmin( (0.8 + (0.2 * (vPtr->prop.fck)/80)) , 1 ) ; // módulo de elasticidade do concreto (GPa)
+        vPtr->prop.Ec  = 0.001 * vPtr->prop.alphaE * 5600 * sqrt(vPtr->prop.fck) * fmin( (0.8 + (0.2 * (vPtr->prop.fck)/80)) , 1 ) ; // módulo de elasticidade do concreto (GPa)
     }
     else{
         vPtr->prop.fct_m = 2.12 * log(1 + 0.11 * vPtr->prop.fck);
-        vPtr->prop.Ec  = 0.001 * 21500 * ALPHA_E * pow( ((vPtr->prop.fck/10) + 1.25) , (1/3) ) * fmin( (0.8 + (0.2 * (vPtr->prop.fck)/80)) , 1 ) ;
+        vPtr->prop.Ec  = 0.001 * 21500 * vPtr->prop.alphaE * pow( ((vPtr->prop.fck/10) + 1.25) , (1/3) ) * fmin( (0.8 + (0.2 * (vPtr->prop.fck)/80)) , 1 ) ;
     }
 
     vPtr->prop.fctk_sup = 1.3 * vPtr->prop.fct_m; // Resistência à tração superior (MPa)

@@ -10,6 +10,5 @@ extern double bitolas_padrao[] ;
 #define NUM_DIV_TOTAIS  500
 #define INTER_PAD_ESTR  2.5 //Intervalo padrao entre estribos
 #define NUM_PERNAS_ESTR 2   //Número de pernas dos estribos calculados
-#define ALPHA_E 1.0   //Parâmetro alpha E referente ao agregado graúdo utilizado
 
 #endif

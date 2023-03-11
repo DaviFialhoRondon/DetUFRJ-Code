@@ -84,6 +84,7 @@ struct propriedades
     double fyd       ; // (MPa) Resistência a tração/compressão das barras longitudinais
     double fywd      ; // (MPa) Resistência a tração/compressão das barras transversais
     double decalagem ; // ( m ) Decalagem do diagrama de momento fletor
+    double alphaE    ; // (   ) Parâmetro alpha E referente ao agregado graúdo utilizado NBR6118 item 8.2.8
     double dimAgreg  ; // ( m ) Dimensão máxima agregado graúdo
     double angBiela  ; // ( m ) Ângulo da biela de concreto
 

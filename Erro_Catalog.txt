@@ -13,6 +13,7 @@
 14  - Nenhum valor para agregado graudo (configuracoes avancadas)
 15  - Nenhum valor para numero de divisoes (configuracoes avancadas)
 16  - Nenhum valor para angulo da biela (configuracoes avancadas)
+17  - Parametro alphaE menor ou igual a zero (configuracoes avancadas)
 101 - Nao foi possivel calcular a linha neutra no dimensionamento
 102 - Vrd2 menor que solicitação
 201 - Nao foi possivel detalhar uma regiao da viga
