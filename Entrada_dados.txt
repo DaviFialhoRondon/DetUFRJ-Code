@@ -1,0 +1,58 @@
+| ENTRADA PARAMETROS GERAIS |
+Altura (m):
+0.5
+
+Largura (m):
+0.22
+
+Cobrimento (m):
+0.03
+
+Comprimento (m):
+5
+
+fck (MPa):
+30
+
+Classe de Agressividade Ambiental (1 a 4):
+2
+
+| BITOLAS POSITIVAS HABILITADAS (mm) |
+6.3: 1
+8.0: 1
+10.0: 1
+12.5: 1
+16.0: 1
+20.0: 1
+25.0: 1
+----------------------
+
+| BITOLAS NEGATIVAS HABILITADAS (mm) |
+6.3: 1
+8.0: 1
+10.0: 1
+12.5: 1
+16.0: 1
+20.0: 1
+25.0: 1
+----------------------
+
+| BITOLAS ESTRIBO HABILITADAS (mm) |
+6.3: 1
+8.0: 1
+10.0: 1
+12.5: 1
+16.0: 1
+20.0: 1
+25.0: 1
+----------------------
+
+Numero de apoios:
+3
+
+| INFORMACOES DOS APOIOS (Posicao (m) / Largura (m)) |
+Posicao: 0.00  /  Largura: 0.30
+Posicao: 2.00  /  Largura: 0.30
+Posicao: 5.00  /  Largura: 0.30
+
+

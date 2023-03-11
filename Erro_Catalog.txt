@@ -1,0 +1,18 @@
+1   - Quantidade de pontos diferente entre os diagramas
+2   - Número de pontos na malha igual a zero ou negativa
+3   - Altura igual a zero ou negativa
+4   - Largura igual a zero ou negativa
+5   - Comprimento igual a zero ou negativa
+7   - Fck igual a zero ou negativa
+8   - CAA igual a zero ou negativa
+9   - CAA maior que 4
+10  - Apoio dos limites
+11  - Largura apoio menor ou igual a zero
+12  - Valor habilitado as bitolas fora de 0 e 1
+13  - Nenhuma bitola habilitada
+14  - Nenhum valor para agregado graudo (configuracoes avancadas)
+15  - Nenhum valor para numero de divisoes (configuracoes avancadas)
+16  - Nenhum valor para angulo da biela (configuracoes avancadas)
+101 - Nao foi possivel calcular a linha neutra no dimensionamento
+102 - Vrd2 menor que solicitação
+201 - Nao foi possivel detalhar uma regiao da viga

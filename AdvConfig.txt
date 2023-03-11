@@ -1,0 +1,29 @@
+Dimensao do agregado graudo (m):
+0.019
+
+Numero de divisoes:
+3
+
+Angulo da biela de concreto (Rad):
+0.7853981
+
+Exibir Divisao regioes (0 ou 1):
+0
+
+Exibir Dimensionamento (0 ou 1):
+0
+
+Exibir barras utilizadas (0 ou 1):
+0
+
+Exibir verificao ELSW (0 ou 1):
+0
+
+Exibir verificao Secao (0 ou 1):
+0
+
+Exibir resultados detalhamento (0 ou 1):
+1
+
+Exibir melhor resultado cada iteracao (0 ou 1):
+0
